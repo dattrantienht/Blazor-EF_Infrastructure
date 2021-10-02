@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorEF.Data\BlazorEF.Data.csproj" />
+    <ProjectReference Include="..\BlazorEF.Infrastructure\BlazorEF.Infrastructure.csproj" />
+    <ProjectReference Include="..\BlazorEF.Utilities\BlazorEF.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>

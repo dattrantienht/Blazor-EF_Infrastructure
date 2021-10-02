@@ -9,6 +9,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BlazorEF.Data\BlazorEF.Data.csproj" />
     <ProjectReference Include="..\BlazorEF.Infrastructure\BlazorEF.Infrastructure.csproj" />
     <ProjectReference Include="..\BlazorEF.Utilities\BlazorEF.Utilities.csproj" />

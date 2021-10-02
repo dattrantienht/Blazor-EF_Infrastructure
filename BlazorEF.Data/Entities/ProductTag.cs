@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BlazorEF.Data.Entities
 {
-    internal class ProductTag : DomainEntity<int>
+    public class ProductTag : DomainEntity<int>
     {
         public int ProductId { get; set; }
 

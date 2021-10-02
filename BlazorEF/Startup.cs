@@ -1,3 +1,5 @@
+using AutoMapper;
+using BlazorEF.Application.AutoMapper;
 using BlazorEF.Areas.Identity;
 using BlazorEF.Data;
 using BlazorEF.Data.EF;
@@ -41,9 +43,13 @@ namespace BlazorEF
             services.AddIdentity<AppUser,AppRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
-
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+
+            IMapper mapper = AutoMapperConfig.RegisterMappings().CreateMapper();
+            services.AddSingleton(mapper);
+            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
+            
             services.AddTransient<DbInitializer>();
 
             services.AddRazorPages();

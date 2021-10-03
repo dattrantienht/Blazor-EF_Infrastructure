@@ -1,9 +1,12 @@
 using AutoMapper;
 using BlazorEF.Application.AutoMapper;
+using BlazorEF.Application.Implementation;
+using BlazorEF.Application.Interfaces;
 using BlazorEF.Areas.Identity;
 using BlazorEF.Data;
 using BlazorEF.Data.EF;
 using BlazorEF.Data.Entities;
+using BlazorEF.Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -56,7 +59,11 @@ namespace BlazorEF
             services.AddServerSideBlazor();
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
             services.AddDatabaseDeveloperPageExceptionFilter();
-            services.AddSingleton<WeatherForecastService>();
+
+            services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
+            services.AddTransient(typeof(IRepository<,>), typeof(EFRepository<,>));
+            //Serrvices
+            services.AddTransient<IProductCategoryService, ProductCategoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -89,7 +96,7 @@ namespace BlazorEF
                 endpoints.MapFallbackToPage("/_Host");
             });
 
-            dbi.Seed().Wait();
+            //dbi.Seed().Wait();
         }
     }
 }

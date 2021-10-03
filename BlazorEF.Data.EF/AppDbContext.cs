@@ -10,6 +10,9 @@ using BlazorEF.Data.EF.Configurations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using BlazorEF.Data.Interfaces;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace BlazorEF.Data.EF
 {
@@ -21,8 +24,8 @@ namespace BlazorEF.Data.EF
 
         public DbSet<AppUser> appUsers { get; set; }
         public DbSet<AppRole> appRoles { get; set; }
-        public DbSet<Function> functions { get; set; }
-        public DbSet<Permission> permissions { get; set; }
+        //public DbSet<Function> functions { get; set; }
+        //public DbSet<Permission> permissions { get; set; }
         public DbSet<Product> products { set; get; }
         public DbSet<ProductCategory> productCategories { set; get; }
         public DbSet<ProductTag> productTags { get; set; }
@@ -71,6 +74,20 @@ namespace BlazorEF.Data.EF
             }
             
             return base.SaveChanges();
+        }
+    }
+
+    public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
+    {
+        public AppDbContext CreateDbContext(string[] args)
+        {
+            IConfiguration configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json").Build();
+            var builder = new DbContextOptionsBuilder<AppDbContext>();
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
+            builder.UseSqlServer(connectionString);
+            return new AppDbContext(builder.Options);
         }
     }
 }

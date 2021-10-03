@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorEF.Data.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211003041953_test")]
-    partial class test
+    [Migration("20211003091757_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -224,14 +224,14 @@ namespace BlazorEF.Data.EF.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<decimal>("OriginalPrice")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double?>("OriginalPrice")
+                        .HasColumnType("float");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
-                    b.Property<decimal>("PromotionPrice")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double?>("PromotionPrice")
+                        .HasColumnType("float");
 
                     b.Property<string>("SeoAlias")
                         .HasMaxLength(255)

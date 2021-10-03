@@ -222,14 +222,14 @@ namespace BlazorEF.Data.EF.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<decimal>("OriginalPrice")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double?>("OriginalPrice")
+                        .HasColumnType("float");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
-                    b.Property<decimal>("PromotionPrice")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double?>("PromotionPrice")
+                        .HasColumnType("float");
 
                     b.Property<string>("SeoAlias")
                         .HasMaxLength(255)

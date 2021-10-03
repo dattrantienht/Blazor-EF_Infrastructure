@@ -97,42 +97,42 @@ namespace BlazorEF.Data.EF
             {
                 List<ProductCategory> listProductCategory = new List<ProductCategory>()
                 {
-                    new ProductCategory() { Name="Handguns",SeoAlias="men-shirt",ParentId = null,Status=Status.Active,SortOrder=1,
+                    new ProductCategory() { Name="Handguns",SeoAlias="handguns",ParentId = null,Status=Status.Active,SortOrder=1,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Product 1",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-1",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 2",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-2",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 3",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-3",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 4",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-4",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 5",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-5",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "Beretta M9",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "Colt M1911",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "Glock 30",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "Pardini GT9",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "The Luger",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                         }
                     },
-                    new ProductCategory() { Name="Rifles",SeoAlias="women-shirt",ParentId = null,Status=Status.Active ,SortOrder=2,
+                    new ProductCategory() { Name="Assault Rifles",SeoAlias="assault-rifles",ParentId = null,Status=Status.Active ,SortOrder=2,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Product 6",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-6",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 7",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-7",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 8",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-8",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 9",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-9",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 10",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-10",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "AK-47",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "StG 44",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "M4A1",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "AR15",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "G36",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                         }},
-                    new ProductCategory() { Name="Machine guns",SeoAlias="men-shoes",ParentId = null,Status=Status.Active ,SortOrder=3,
+                    new ProductCategory() { Name="Machine guns",SeoAlias="machine-guns",ParentId = null,Status=Status.Active ,SortOrder=3,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Product 11",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-11",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 12",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-12",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 13",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-13",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 14",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-14",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 15",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-15",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "AA-52",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "Breda 38",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "Daewoo K3",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "Gatling gun",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "GAU-19",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                         }},
-                    new ProductCategory() { Name="Sniper rifles",SeoAlias="women-shoes",ParentId = null,Status=Status.Active,SortOrder=4,
+                    new ProductCategory() { Name="Sniper rifles",SeoAlias="sniper-rifles",ParentId = null,Status=Status.Active,SortOrder=4,
                         Products = new List<Product>()
                         {
-                            new Product(){Name = "Product 16",DateCreated=DateTime.Now, Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-16",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 17",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-17",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 18",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-18",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 19",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-19",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
-                            new Product(){Name = "Product 20",DateCreated=DateTime.Now,Image="/client-side/images/products/product-1.jpg",SeoAlias = "san-pham-20",Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "Armalite AR-50",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "Barrett M99",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "Dragunov SVU",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "DSR-1",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
+                            new Product(){Name = "AWM",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                         }}
                 };
                 _context.productCategories.AddRange(listProductCategory);

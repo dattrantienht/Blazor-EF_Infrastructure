@@ -25,9 +25,9 @@ namespace BlazorEF.Data.Entities
         public string Image { get; set; }
         [Required]
         [DefaultValue(0)]
-        public decimal Price { get; set; }
-        public decimal PromotionPrice { get; set; }
-        public decimal OriginalPrice { get; set; }
+        public double Price { get; set; }
+        public double? PromotionPrice { get; set; }
+        public double? OriginalPrice { get; set; }
         [StringLength(255)]
         public string Description { get; set; }
         public string Content { get; set; }

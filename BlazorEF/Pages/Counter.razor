@@ -1,18 +1,10 @@
-﻿@page "/counter"
-@using BlazorEF.Application.Implementation
+﻿@page "/testdata"
 @using BlazorEF.Application.Interfaces
 @using BlazorEF.Application.ViewModels.Product
-@using BlazorEF.Data.Entities
 @inject IProductCategoryService productService
 
 
-<h1>Counter</h1>
-
-<p>Current count: @currentCount</p>
-
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-
-<button class="btn btn-primary" @onclick="getLoaiHang">get loai hang</button>
+<h1>List Seeded Data</h1>
 
 @if (productCategories == null)
 {
@@ -20,28 +12,32 @@
 }
 else
 {
-    <li>
-        @foreach (var loaiHang in productCategories)
-        {
-            <ul>@loaiHang.Name</ul>
-        }
-
-    </li>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var loaiHang in productCategories)
+            {
+                <tr>
+                    <td>@loaiHang.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 
 
 @code {
-    private int currentCount = 0;
 
-    private void IncrementCount()
+    private List<ProductCategoryViewModel> productCategories;
+    protected override void OnInitialized()
     {
-        currentCount++;
-    }
-
-    private ProductCategoryViewModel[] productCategories;
-    private void getLoaiHang()
-    {
-        productCategories = productService.GetAll().ToArray();
+        productCategories = productService.GetAll();
+        base.OnInitialized();
     }
 
 }
+

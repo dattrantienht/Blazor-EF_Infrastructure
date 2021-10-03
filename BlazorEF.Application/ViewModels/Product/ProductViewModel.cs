@@ -21,12 +21,12 @@ namespace BlazorEF.Application.ViewModels.Product
 
         [Required]
         [DefaultValue(0)]
-        public decimal Price { get; set; }
+        public double Price { get; set; }
 
-        public decimal? PromotionPrice { get; set; }
+        public double? PromotionPrice { get; set; }
 
         [Required]
-        public decimal OriginalPrice { get; set; }
+        public double? OriginalPrice { get; set; }
 
         [StringLength(255)]
         public string Description { get; set; }

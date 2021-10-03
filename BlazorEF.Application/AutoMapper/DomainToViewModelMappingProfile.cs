@@ -14,6 +14,7 @@ namespace BlazorEF.Application.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<ProductCategory, ProductCategoryViewModel>();
+            CreateMap<Product, ProductViewModel>();
         }
     }
 }

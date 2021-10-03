@@ -53,7 +53,7 @@ namespace BlazorEF.Data.EF
             builder.AddConfiguration(new TagConfiguration());
             builder.AddConfiguration(new FunctionConfiguration());
 
-            base.OnModelCreating(builder);
+            //base.OnModelCreating(builder);
         }
 
         public override int SaveChanges()

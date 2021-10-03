@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorEF.Data.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211003091757_init")]
+    [Migration("20211003095414_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -309,9 +309,6 @@ namespace BlazorEF.Data.EF.Migrations
 
                     b.Property<string>("SeoPageTitle")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SortOrder")
-                        .HasColumnType("int");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");

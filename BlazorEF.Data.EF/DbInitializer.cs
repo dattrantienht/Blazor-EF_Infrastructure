@@ -97,7 +97,7 @@ namespace BlazorEF.Data.EF
             {
                 List<ProductCategory> listProductCategory = new List<ProductCategory>()
                 {
-                    new ProductCategory() { Name="Handguns",SeoAlias="handguns",ParentId = null,Status=Status.Active,SortOrder=1,
+                    new ProductCategory() { Name="Handguns",SeoAlias="handguns",ParentId = null,Status=Status.Active,
                         Products = new List<Product>()
                         {
                             new Product(){Name = "Beretta M9",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
@@ -107,7 +107,7 @@ namespace BlazorEF.Data.EF
                             new Product(){Name = "The Luger",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                         }
                     },
-                    new ProductCategory() { Name="Assault Rifles",SeoAlias="assault-rifles",ParentId = null,Status=Status.Active ,SortOrder=2,
+                    new ProductCategory() { Name="Assault Rifles",SeoAlias="assault-rifles",ParentId = null,Status=Status.Active,
                         Products = new List<Product>()
                         {
                             new Product(){Name = "AK-47",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
@@ -116,7 +116,7 @@ namespace BlazorEF.Data.EF
                             new Product(){Name = "AR15",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                             new Product(){Name = "G36",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                         }},
-                    new ProductCategory() { Name="Machine guns",SeoAlias="machine-guns",ParentId = null,Status=Status.Active ,SortOrder=3,
+                    new ProductCategory() { Name="Machine guns",SeoAlias="machine-guns",ParentId = null,Status=Status.Active,
                         Products = new List<Product>()
                         {
                             new Product(){Name = "AA-52",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
@@ -125,7 +125,7 @@ namespace BlazorEF.Data.EF
                             new Product(){Name = "Gatling gun",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                             new Product(){Name = "GAU-19",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},
                         }},
-                    new ProductCategory() { Name="Sniper rifles",SeoAlias="sniper-rifles",ParentId = null,Status=Status.Active,SortOrder=4,
+                    new ProductCategory() { Name="Sniper rifles",SeoAlias="sniper-rifles",ParentId = null,Status=Status.Active,
                         Products = new List<Product>()
                         {
                             new Product(){Name = "Armalite AR-50",DateCreated=DateTime.Now,Price = 1000,Status = Status.Active,OriginalPrice = 1000},

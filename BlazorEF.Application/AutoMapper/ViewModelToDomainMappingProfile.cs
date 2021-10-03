@@ -21,7 +21,6 @@ namespace BlazorEF.Application.AutoMapper
                     c.HomeOrder,
                     c.Image, 
                     c.HomeFlag,
-                    c.SortOrder, 
                     c.Status, 
                     c.SeoPageTitle, 
                     c.SeoAlias, 

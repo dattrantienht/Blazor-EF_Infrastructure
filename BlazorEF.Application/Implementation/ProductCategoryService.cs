@@ -91,18 +91,6 @@ namespace BlazorEF.Application.Implementation
             return categories;
         }
 
-        public void ReOrder(int sourceId, int targetId)
-        {
-            var source = _productCategoryRepository.FindById(sourceId);
-            var target = _productCategoryRepository.FindById(targetId);
-            int tempOrder = source.SortOrder;
-            source.SortOrder = target.SortOrder;
-            target.SortOrder = tempOrder;
-
-            _productCategoryRepository.Update(source);
-            _productCategoryRepository.Update(target);
-        }
-
         public void Save()
         {
             _unitOfWork.Commit();
@@ -124,7 +112,6 @@ namespace BlazorEF.Application.Implementation
             var sibling = _productCategoryRepository.FindAll(x => items.ContainsKey(x.Id));
             foreach (var child in sibling)
             {
-                child.SortOrder = items[child.Id];
                 _productCategoryRepository.Update(child);
             }
         }

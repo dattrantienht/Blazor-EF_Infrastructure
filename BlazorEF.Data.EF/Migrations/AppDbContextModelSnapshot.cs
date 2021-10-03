@@ -308,9 +308,6 @@ namespace BlazorEF.Data.EF.Migrations
                     b.Property<string>("SeoPageTitle")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SortOrder")
-                        .HasColumnType("int");
-
                     b.Property<int>("Status")
                         .HasColumnType("int");
 

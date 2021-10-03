@@ -9,7 +9,7 @@ namespace BlazorEF.Data.Entities
 {
     [Table("ProductCategories")]
     public class ProductCategory : DomainEntity<int>,
-        IHasSeoMetaData, ISwitchable, ISortable, IDateTracking
+        IHasSeoMetaData, ISwitchable, IDateTracking
     {
         public ProductCategory()
         {
@@ -17,7 +17,7 @@ namespace BlazorEF.Data.Entities
         }
 
         public ProductCategory(string name, string description, int? parentId, int? homeOrder,
-            string image, bool? homeFlag, int sortOrder, Status status, string seoPageTitle, string seoAlias,
+            string image, bool? homeFlag, Status status, string seoPageTitle, string seoAlias,
             string seoKeywords, string seoDescription)
         {
             Name = name;
@@ -26,7 +26,6 @@ namespace BlazorEF.Data.Entities
             HomeOrder = homeOrder;
             Image = image;
             HomeFlag = homeFlag;
-            SortOrder = sortOrder;
             Status = status;
             SeoPageTitle = seoPageTitle;
             SeoAlias = seoAlias;
@@ -43,7 +42,6 @@ namespace BlazorEF.Data.Entities
 
         public DateTime DateCreated { set; get; }
         public DateTime DateModified { set; get; }
-        public int SortOrder { set; get; }
         public Status Status { set; get; }
         public string SeoPageTitle { set; get; }
         public string SeoAlias { set; get; }

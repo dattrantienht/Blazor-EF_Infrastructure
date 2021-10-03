@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BlazorEF.Application.AutoMapper
 {
-    class DomainToViewModelMappingProfile : Profile
+    public class DomainToViewModelMappingProfile : Profile
     {
         public DomainToViewModelMappingProfile()
         {

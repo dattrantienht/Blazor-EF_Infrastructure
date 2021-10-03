@@ -46,13 +46,15 @@ namespace BlazorEF
             services.AddIdentity<AppUser,AppRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
-            services.AddAutoMapper(typeof(Startup));
+
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
+            //services.AddControllersWithViews();
+            services.AddAutoMapper(typeof(ViewModelToDomainMappingProfile), typeof(DomainToViewModelMappingProfile));
             IMapper mapper = AutoMapperConfig.RegisterMappings().CreateMapper();
             services.AddSingleton(mapper);
-            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
+            //services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<AutoMapper.IConfigurationProvider>(), sp.GetService));
             
             services.AddTransient<DbInitializer>();
 

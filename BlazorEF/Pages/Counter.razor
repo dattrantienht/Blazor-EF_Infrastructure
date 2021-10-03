@@ -1,8 +1,7 @@
 ﻿@page "/testdata"
-@using BlazorEF.Application.Interfaces
-@using BlazorEF.Application.ViewModels.Product
-@inject IProductCategoryService productService
+@using BlazorEF.Application.Interfaces;
 
+@inject IProductCategoryService _productService;
 
 <h1>List Seeded Data</h1>
 
@@ -31,24 +30,19 @@ else
 
 
 <div>
+    <h3>Add Product Categories</h3>
     <form>
         <div class="form-group">
             <label for="nameInput">Name</label>
-            <input type="text" class="form-control" id="nameInput" placeholder="Enter Name">
+            <input value="@pcname" @onchange="@(e=>pcname= e.Value.ToString())" name="pcname" type="text" class="form-control" id="nameInput" placeholder="Enter Product Categories Name">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" @onclick="testBinding" >Add</button>
     </form>
 </div>
 
+<p>@pcname</p>
 
 @code {
-
-    private List<ProductCategoryViewModel> productCategories;
-    protected override void OnInitialized()
-    {
-        productCategories = productService.GetAll();
-        base.OnInitialized();
-    }
-
+    
 }
 

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BlazorEF.Data.EF.Configurations
 {
-    internal class TagConfiguration : DbEntityConfiguration<Tag>
+    public class TagConfiguration : DbEntityConfiguration<Tag>
     {
         public override void Configure(EntityTypeBuilder<Tag> entity)
         {

@@ -24,8 +24,8 @@ namespace BlazorEF.Data.EF
 
         public DbSet<AppUser> appUsers { get; set; }
         public DbSet<AppRole> appRoles { get; set; }
-        //public DbSet<Function> functions { get; set; }
-        //public DbSet<Permission> permissions { get; set; }
+        public DbSet<Function> functions { get; set; }
+        public DbSet<Permission> permissions { get; set; }
         public DbSet<Product> products { set; get; }
         public DbSet<ProductCategory> productCategories { set; get; }
         public DbSet<ProductTag> productTags { get; set; }
@@ -51,7 +51,8 @@ namespace BlazorEF.Data.EF
             #endregion Identity Config
 
             builder.AddConfiguration(new TagConfiguration());
-              
+            builder.AddConfiguration(new FunctionConfiguration());
+
             base.OnModelCreating(builder);
         }
 

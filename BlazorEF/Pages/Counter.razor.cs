@@ -24,6 +24,11 @@ namespace BlazorEF.Pages
 
         protected override async Task OnInitializedAsync()
         {
+            await Task.Run(getPC);
+        }
+
+        public async Task getPC()
+        {
             var request = new HttpRequestMessage(HttpMethod.Get,
                 "api/ProductCategory");
             var client = _clientFactory.CreateClient("blazor");

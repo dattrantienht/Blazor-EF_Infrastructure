@@ -15,8 +15,8 @@ else if (productCategories == null)
 }
 else
 {
-    <table class="table">
-        <thead>
+    <table class="table table-striped">
+        <thead class="thead-dark">
             <tr>
                 <th>Name</th>
             </tr>
@@ -32,21 +32,19 @@ else
     </table>
 }
 
-
-<div>
+@*<div>
     <h3>Add Product Categories</h3>
     <form>
         <div class="form-group">
             <label for="nameInput">Name</label>
             <input value="@pcname" @onchange="@(e=>pcname= e.Value.ToString())" name="pcname" type="text" class="form-control" id="nameInput" placeholder="Enter Product Categories Name">
         </div>
-        @*<button type="button" class="btn btn-primary" @onclick="testBinding">Add</button>*@
+        <button type="button" class="btn btn-primary" @onclick="testBinding">Add</button>
     </form>
-</div>
 
-<p>@pcname</p>
+    <p>@pcname</p>
+</div>*@
 
-@code {
 
-}
+
 

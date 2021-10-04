@@ -50,9 +50,10 @@ namespace BlazorEF
 
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+            services.AddHttpClient();
             services.AddHttpClient("blazor",client=> 
             {
-                client.BaseAddress = new Uri("https://localhost:5001/");
+                client.BaseAddress = new Uri(Configuration.GetValue<string>("BlazorAPI"));
             });
             //services.AddControllersWithViews();
             services.AddAutoMapper(typeof(ViewModelToDomainMappingProfile), typeof(DomainToViewModelMappingProfile));

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorEF.Application\BlazorEF.Application.csproj" />
+    <ProjectReference Include="..\BlazorEF.Data.EF\BlazorEF.Data.EF.csproj" />
+    <ProjectReference Include="..\BlazorEF.Data\BlazorEF.Data.csproj" />
+    <ProjectReference Include="..\BlazorEF.Infrastructure\BlazorEF.Infrastructure.csproj" />
+    <ProjectReference Include="..\BlazorEF.Utilities\BlazorEF.Utilities.csproj" />
+    <ProjectReference Include="..\BlazorEF\BlazorEF.csproj" />
+  </ItemGroup>
+
+</Project>

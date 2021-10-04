@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEF", "BlazorEF\BlazorEF.csproj", "{FC2F3D7F-06AE-4E6B-8617-BCC5B525C3E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorEF", "BlazorEF\BlazorEF.csproj", "{FC2F3D7F-06AE-4E6B-8617-BCC5B525C3E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{85B28A91-D52A-4D02-B1E2-262834D7A4FA}"
 EndProject
@@ -13,15 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{32EF9AE8-D2EE-48DA-9BB5-CE1EF231D3FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEF.Infrastructure", "BlazorEF.Infrastructure\BlazorEF.Infrastructure.csproj", "{4D48FF89-7361-43CD-AFDD-422DD8526F03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorEF.Infrastructure", "BlazorEF.Infrastructure\BlazorEF.Infrastructure.csproj", "{4D48FF89-7361-43CD-AFDD-422DD8526F03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEF.Utilities", "BlazorEF.Utilities\BlazorEF.Utilities.csproj", "{8AEFBD8F-09AC-4BFD-BE9D-59F612D05404}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorEF.Utilities", "BlazorEF.Utilities\BlazorEF.Utilities.csproj", "{8AEFBD8F-09AC-4BFD-BE9D-59F612D05404}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEF.Data", "BlazorEF.Data\BlazorEF.Data.csproj", "{76219691-6DAC-4F1A-AF3F-D5F51626CE2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorEF.Data", "BlazorEF.Data\BlazorEF.Data.csproj", "{76219691-6DAC-4F1A-AF3F-D5F51626CE2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEF.Data.EF", "BlazorEF.Data.EF\BlazorEF.Data.EF.csproj", "{667830DE-39EB-4617-8865-A997DF0D4889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorEF.Data.EF", "BlazorEF.Data.EF\BlazorEF.Data.EF.csproj", "{667830DE-39EB-4617-8865-A997DF0D4889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEF.Application", "BlazorEF.Application\BlazorEF.Application.csproj", "{63BB0EED-DFE9-4C95-B9F1-6E8F928B4AA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorEF.Application", "BlazorEF.Application\BlazorEF.Application.csproj", "{63BB0EED-DFE9-4C95-B9F1-6E8F928B4AA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEF.API", "BlazorEF.API\BlazorEF.API.csproj", "{8BB69D87-4274-46FA-A67B-34F2F3BA7B7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{63BB0EED-DFE9-4C95-B9F1-6E8F928B4AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63BB0EED-DFE9-4C95-B9F1-6E8F928B4AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63BB0EED-DFE9-4C95-B9F1-6E8F928B4AA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BB69D87-4274-46FA-A67B-34F2F3BA7B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BB69D87-4274-46FA-A67B-34F2F3BA7B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BB69D87-4274-46FA-A67B-34F2F3BA7B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BB69D87-4274-46FA-A67B-34F2F3BA7B7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{76219691-6DAC-4F1A-AF3F-D5F51626CE2C} = {0D423B97-8B1A-469D-9EFE-ECB7BA55E73B}
 		{667830DE-39EB-4617-8865-A997DF0D4889} = {0D423B97-8B1A-469D-9EFE-ECB7BA55E73B}
 		{63BB0EED-DFE9-4C95-B9F1-6E8F928B4AA8} = {A75C4161-9E76-4ED0-B060-55303767E595}
+		{8BB69D87-4274-46FA-A67B-34F2F3BA7B7F} = {85B28A91-D52A-4D02-B1E2-262834D7A4FA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {48788FA5-E3BF-4B88-9586-7DE0788FD523}

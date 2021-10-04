@@ -15,7 +15,6 @@
     <ProjectReference Include="..\BlazorEF.Data\BlazorEF.Data.csproj" />
     <ProjectReference Include="..\BlazorEF.Infrastructure\BlazorEF.Infrastructure.csproj" />
     <ProjectReference Include="..\BlazorEF.Utilities\BlazorEF.Utilities.csproj" />
-    <ProjectReference Include="..\BlazorEF\BlazorEF.csproj" />
   </ItemGroup>
 
 </Project>

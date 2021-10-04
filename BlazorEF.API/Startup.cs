@@ -38,7 +38,7 @@ namespace BlazorEF.API
             services.AddDbContext<AppDbContext>(options =>
                options.UseSqlServer(
                    Configuration.GetConnectionString("DbConnection"),
-                   o => o.MigrationsAssembly("BlazorEF.Data.EF")));
+                   b => b.MigrationsAssembly("BlazorEF.Data.EF")));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -2,9 +2,13 @@
 using BlazorEF.Application.ViewModels.Product;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace BlazorEF.API.Controllers
@@ -13,15 +17,33 @@ namespace BlazorEF.API.Controllers
     {
         private readonly IProductCategoryService _productCategoryService;
 
-        public ProductCategoryController(IProductCategoryService productCategoryService)
+        public ProductCategoryController(IProductCategoryService productCategoryService )
         {
             _productCategoryService = productCategoryService;
         }
 
+
         [HttpGet]
-        public List<ProductCategoryViewModel> GetAll()
+        public ActionResult<List<ProductCategoryViewModel>> GetAll()
         {
-            return _productCategoryService.GetAll();
+            var data = _productCategoryService.GetAll();
+            if (data is null)
+            {
+                return NotFound("Get product category failed (╥﹏╥)");
+            }
+            return data;
+        }
+
+
+        [HttpGet("id={id}")]
+        public ActionResult<ProductCategoryViewModel> GetById(int id)
+        {
+            var data = _productCategoryService.GetById(id);
+            if(data is null)
+            {
+                return NotFound("Get product category failed (╥﹏╥)");
+            }
+            return data;
         }
 
         [HttpPost]

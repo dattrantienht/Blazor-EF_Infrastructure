@@ -8,29 +8,35 @@ using Microsoft.AspNetCore.Mvc;
 using BlazorEF.Application.Interfaces;
 using BlazorEF.Application.Implementation;
 using BlazorEF.API.Controllers;
+using System.Net.Http;
+using System.Text.Json;
+using System.Net.Http.Json;
 
 namespace BlazorEF.Pages
 {
     public partial class Counter
     {
-       
-        private List<ProductCategoryViewModel> productCategories;
+
+        public List<ProductCategoryViewModel> productCategories;
+        string errorString;
         public string pcname { get; set; }
         private ProductCategoryViewModel newPC = new ProductCategoryViewModel();
-        
-        protected override void OnInitialized()
-        {
-            productCategories = _productCategoryController.GetAll();
-            base.OnInitialized();
-        }
 
-        private void testBinding()
+        protected override async Task OnInitializedAsync()
         {
-            Console.WriteLine(pcname);
-            newPC.Name = pcname;
-            _productCategoryController.Add(newPC);
-            productCategories = _productCategoryController.GetAll();
-        }
+            var request = new HttpRequestMessage(HttpMethod.Get,
+                "api/ProductCategory");
+            var client = _clientFactory.CreateClient("blazor");
+            HttpResponseMessage response = await client.SendAsync(request);
 
+            if (response.IsSuccessStatusCode)
+            {
+                productCategories = await response.Content.ReadFromJsonAsync<List<ProductCategoryViewModel>>();
+            }
+            else
+            {
+                errorString = $"Error: {response.ReasonPhrase}";
+            }
+        }
     }
 }

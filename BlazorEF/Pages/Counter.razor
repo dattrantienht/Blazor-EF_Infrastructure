@@ -1,11 +1,15 @@
 ﻿@page "/testdata"
 @using BlazorEF.API.Controllers;
-
 @inject ProductCategoryController _productCategoryController;
-
+@inject IHttpClientFactory _clientFactory;
 <h1>List Seeded Data</h1>
 
-@if (productCategories == null)
+@if (!string.IsNullOrWhiteSpace(errorString))
+{
+    <p><em>@errorString</em></p>
+}
+
+else if (productCategories == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -19,11 +23,11 @@ else
         </thead>
         <tbody>
             @foreach (var loaiHang in productCategories)
-            {
-                <tr>
-                    <td>@loaiHang.Name</td>
-                </tr>
-            }
+                {
+                    <tr>
+                        <td>@loaiHang.Name</td>
+                    </tr>
+                }
         </tbody>
     </table>
 }
@@ -36,7 +40,7 @@ else
             <label for="nameInput">Name</label>
             <input value="@pcname" @onchange="@(e=>pcname= e.Value.ToString())" name="pcname" type="text" class="form-control" id="nameInput" placeholder="Enter Product Categories Name">
         </div>
-        <button type="button" class="btn btn-primary" @onclick="testBinding">Add</button>
+        @*<button type="button" class="btn btn-primary" @onclick="testBinding">Add</button>*@
     </form>
 </div>
 

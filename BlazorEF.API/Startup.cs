@@ -46,7 +46,7 @@ namespace BlazorEF.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BlazorEF.API", Version = "v1" });
             });
-
+            //services.AddHttpClient();
             services.AddAutoMapper(typeof(ViewModelToDomainMappingProfile), typeof(DomainToViewModelMappingProfile));
             IMapper mapper = AutoMapperConfig.RegisterMappings().CreateMapper();
             services.AddSingleton(mapper);

@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BlazorEF.API\BlazorEF.API.csproj" />
     <ProjectReference Include="..\BlazorEF.Application\BlazorEF.Application.csproj" />
     <ProjectReference Include="..\BlazorEF.Data.EF\BlazorEF.Data.EF.csproj" />
     <ProjectReference Include="..\BlazorEF.Data\BlazorEF.Data.csproj" />

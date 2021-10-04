@@ -9,9 +9,7 @@ using System.Threading.Tasks;
 
 namespace BlazorEF.API.Controllers
 {
-    [Route("api/productcategory")]
-    [ApiController]
-    public class ProductCategoryController : ControllerBase
+    public class ProductCategoryController : ApiController
     {
         private readonly IProductCategoryService _productCategoryService;
 
@@ -24,6 +22,13 @@ namespace BlazorEF.API.Controllers
         public List<ProductCategoryViewModel> GetAll()
         {
             return _productCategoryService.GetAll();
+        }
+
+        [HttpPost]
+        public void Add(ProductCategoryViewModel productCategoryVm)
+        {
+            _productCategoryService.Add(productCategoryVm);
+            _productCategoryService.Save();
         }
     }
 }

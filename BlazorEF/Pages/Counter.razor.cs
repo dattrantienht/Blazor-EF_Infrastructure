@@ -7,31 +7,30 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
 using BlazorEF.Application.Interfaces;
 using BlazorEF.Application.Implementation;
+using BlazorEF.API.Controllers;
 
 namespace BlazorEF.Pages
 {
     public partial class Counter
     {
-
+       
         private List<ProductCategoryViewModel> productCategories;
+        public string pcname { get; set; }
+        private ProductCategoryViewModel newPC = new ProductCategoryViewModel();
+        
         protected override void OnInitialized()
         {
-            productCategories = _productService.GetAll();
+            productCategories = _productCategoryController.GetAll();
             base.OnInitialized();
         }
 
-        public string pcname { get; set; }
-        private ProductCategoryViewModel newPC = new ProductCategoryViewModel();
         private void testBinding()
         {
             Console.WriteLine(pcname);
             newPC.Name = pcname;
-            _productService.Add(newPC);
-            _productService.Save();
-            productCategories = _productService.GetAll();
+            _productCategoryController.Add(newPC);
+            productCategories = _productCategoryController.GetAll();
         }
-
-        
 
     }
 }

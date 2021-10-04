@@ -1,4 +1,5 @@
 using AutoMapper;
+using BlazorEF.API.Controllers;
 using BlazorEF.Application.AutoMapper;
 using BlazorEF.Application.Implementation;
 using BlazorEF.Application.Interfaces;
@@ -53,7 +54,7 @@ namespace BlazorEF.API
             services.AddTransient(typeof(IUnitOfWork), typeof(EFUnitOfWork));
             services.AddTransient(typeof(IRepository<,>), typeof(EFRepository<,>));
             //Serrvices
-            services.AddTransient<IProductCategoryService, ProductCategoryService>();
+            services.AddTransient<ProductCategoryController>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

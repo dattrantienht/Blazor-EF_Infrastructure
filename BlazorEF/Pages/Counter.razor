@@ -1,7 +1,7 @@
 ﻿@page "/testdata"
-@using BlazorEF.Application.Interfaces;
+@using BlazorEF.API.Controllers;
 
-@inject IProductCategoryService _productService;
+@inject ProductCategoryController _productCategoryController;
 
 <h1>List Seeded Data</h1>
 
@@ -36,13 +36,13 @@ else
             <label for="nameInput">Name</label>
             <input value="@pcname" @onchange="@(e=>pcname= e.Value.ToString())" name="pcname" type="text" class="form-control" id="nameInput" placeholder="Enter Product Categories Name">
         </div>
-        <button type="button" class="btn btn-primary" @onclick="testBinding" >Add</button>
+        <button type="button" class="btn btn-primary" @onclick="testBinding">Add</button>
     </form>
 </div>
 
 <p>@pcname</p>
 
 @code {
-    
+
 }
 

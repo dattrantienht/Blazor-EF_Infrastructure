@@ -37,7 +37,7 @@ namespace BlazorEF.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options =>
-               options.UseSqlServer(
+            options.UseSqlServer(
                    Configuration.GetConnectionString("DbConnection"),
                    b => b.MigrationsAssembly("BlazorEF.Data.EF")));
 

@@ -1,0 +1,116 @@
+﻿@page "/testdata"
+
+<h1>Get All Api</h1>
+
+@if (!string.IsNullOrWhiteSpace(errorString))
+{
+    <p><em>@errorString</em></p>
+}
+
+else if (listProductCategories == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Put API</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var loaiHang in listProductCategories)
+            {
+                <tr>
+                    <td>@loaiHang.Id</td>
+                    <td>@loaiHang.Name</td>
+                    <td><a style="font-size:1.5rem" href="" @onclick="@(()=>getDataForModal(loaiHang.Name,loaiHang.Id))" data-toggle="modal" data-target="#exampleModal"><span class="oi oi-pencil"></span></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<h1>Get By Id Api</h1>
+
+<form>
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+            <label class="sr-only" for="inlineFormInput">Product Categories ID</label>
+            <input @bind="PCid" type="number" class="form-control mb-2" id="inlineFormInput" placeholder="Enter ID">
+        </div>
+        <div class="col-auto">
+            <button @onclick="getPCbyID" type="button" class="btn btn-primary mb-2">Get</button>
+        </div>
+    </div>
+</form>
+
+@if (!string.IsNullOrWhiteSpace(errorString2))
+{
+    <p><em>@errorString2</em></p>
+}
+else if (productCategory != null)
+{
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@productCategory.Id</td>
+                <td>@productCategory.Name</td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+<h1>Post Api</h1>
+
+<form>
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+            <label class="sr-only" for="inlineFormInput">Product Categories ID</label>
+            <input @bind="newPcName" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Enter category Name">
+        </div>
+        <div class="col-auto">
+            <button @onclick="Add" type="button" class="btn btn-primary mb-2">Add</button>
+        </div>
+    </div>
+</form>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Put Api</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="editName" class="col-sm-3 col-form-label">New Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" @bind="editName" class="form-control" id="editName">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button @onclick="Edit" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

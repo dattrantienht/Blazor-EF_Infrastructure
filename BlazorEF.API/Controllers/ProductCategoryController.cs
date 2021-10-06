@@ -52,5 +52,12 @@ namespace BlazorEF.API.Controllers
             _productCategoryService.Add(productCategoryVm);
             _productCategoryService.Save();
         }
+
+        [HttpPut]
+        public void Edit(ProductCategoryViewModel productCategoryVm)
+        {
+            _productCategoryService.Update(productCategoryVm);
+            _productCategoryService.Save();
+        }
     }
 }

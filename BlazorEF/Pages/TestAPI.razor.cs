@@ -1,22 +1,32 @@
 ﻿using BlazorEF.Application.ViewModels.Product;
+using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace BlazorEF.Pages
 {
-    public partial class Counter
+    public partial class TestAPI
     {
+        [Inject]
+        public IHttpClientFactory _clientFactory { get; set; }
+
         public List<ProductCategoryViewModel> listProductCategories;
-        ProductCategoryViewModel productCategory;
+        private ProductCategoryViewModel productCategory;
         private string errorString;
         private string errorString2;
         private string errorString3;
+        private string errorString4;
+
         public string pcname { get; set; }
         private ProductCategoryViewModel newPC = new ProductCategoryViewModel();
         private int PCid;
         private string newPcName;
+        private string editName;
+        private int editId;
+
         protected override async Task OnInitializedAsync()
         {
             await Task.Run(getPC);
@@ -66,5 +76,33 @@ namespace BlazorEF.Pages
                 errorString3 = $"Error: {ex.Message}";
             }
         }
+
+        public async Task Edit()
+        {
+            var client = _clientFactory.CreateClient("blazor");
+            try
+            {
+                newPC.Name = editName;
+                newPC.Id = editId;
+                await client.PutAsJsonAsync<ProductCategoryViewModel>($"ProductCategory", newPC);
+                await Task.Run(getPC);
+                editName = "";
+                editId = 0;
+                errorString4 = null;
+            }
+            catch (Exception ex)
+            {
+                errorString4 = $"Error: {ex.Message}";
+            }
+        }
+
+
+        private void getDataForModal(string name,int id)
+        {
+            editName = name;
+            editId = id;
+        }
+
+
     }
 }

@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorEF.Data.EF", "BlazorE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorEF.Application", "BlazorEF.Application\BlazorEF.Application.csproj", "{63BB0EED-DFE9-4C95-B9F1-6E8F928B4AA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEF.API", "BlazorEF.API\BlazorEF.API.csproj", "{8BB69D87-4274-46FA-A67B-34F2F3BA7B7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorEF.API", "BlazorEF.API\BlazorEF.API.csproj", "{8BB69D87-4274-46FA-A67B-34F2F3BA7B7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
